@@ -2,11 +2,17 @@ package com.example.tradecalculation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TradeController {
+
+    @GetMapping("/inputForm")
+    public String showInputForm() {
+        return "inputForm";
+    }
 
     @PostMapping("/calculateForward")
     public String calculateForward(
@@ -31,4 +37,5 @@ public class TradeController {
         return "result";
     }
 }
+
 
